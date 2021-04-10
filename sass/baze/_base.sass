@@ -1,0 +1,93 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    transition: .1s ease-in-out
+
+html
+    font-size: 10px
+    overflow-x: hidden
+    min-height: 100vh
+
+body
+    overflow: auto;
+    line-height: 1;
+    width: 100%
+    scroll-behavior: smooth
+    
+
+img
+    max-width: 100%
+    height: auto
+
+//grid 
+$col-margin: 10px
+$bd-wrap: 2px
+
+$xs: 320px
+$sm: 576px
+$md: 768px
+$lg: 992px
+$xl: 1211px
+
+=grid-media($screen, $col)
+    @media screen and (max-width: $screen)
+        +col($screen, $col)
+
+=col($screen ,$col)
+    $res: $screen / $col
+    width: calc(#{$res} - #{$col-margin*2} - #{$bd-wrap})
+    margin: $col-margin
+
+=media($px)
+    @media screen and (max-width: $px)
+        @content
+
+// flex
+=flex-wrap
+    display: flex
+    flex-wrap: wrap
+
+=flex-wrap-center
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+
+// buttons
+=btn-none
+    border: none
+    outline: none
+
+=block-center
+    display: block
+    margin: 0 auto
+
+// line under text
+=underline($line-color, $line-width, $margin)
+    content: ''
+    display: block
+    height: 1px
+    width: $line-width
+    background-color: $line-color
+    margin: $margin
+
+// container
+=container($container-width)
+    display: block
+    margin: 0 auto
+    max-width: $container-width
+
+// header settings 
+=header($header-bg-color)
+    display: block
+    width: 100%
+    position: fixed
+    top: 0
+    background-color: $header-bg-color
+
+// footer settings
+=footer
+    display: block
+    width: 100%
+    bottom: 0

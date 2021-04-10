@@ -1,0 +1,1124 @@
+@import "baze/_base"
+@import "baze/_vars"
+
+// start settings
+
+
+body
+    font-family: $font-family
+    
+
+.container
+    +container(1920px)
+    @media screen and ( max-width: 1200px )
+        width: 100%
+        padding: 0
+
+.wrapper
+    +container(1200px)
+    
+    @media screen and ( max-width: 1240px )
+        padding: 0 1rem
+        width: 100%
+
+
+// heading settings for sections
+.head
+    +flex-wrap
+    padding: 10rem 0 
+
+    @media screen and ( max-width: 1240px )
+            flex-direction: column
+            align-items: center
+            text-align: center
+            
+
+    &__btn
+        display: flex
+        align-items: flex-end
+
+        @media screen and ( max-width: 1240px )
+            align-items: center
+            padding: 10rem 0 0 0
+    
+    .head-text
+        
+        &__title
+            color: $black
+            font-size: 3rem;    
+            font-weight: 700;
+            margin-bottom: 2.4rem
+
+        &__subtitle
+            max-width: 33.9rem
+            color: $grey
+            font-size: 1.4rem;
+
+.btn-more
+    cursor: pointer
+    outline: none
+    background-color: transparent
+    border: 1px solid $black
+    border-radius: 3rem
+    padding: 1.9rem 4.4rem
+    margin-left: 66rem
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: .3s
+
+    @media screen and ( max-width: 1240px )
+            display: block
+            margin: 3rem auto
+
+    &:hover
+        background-color: $burgundy
+        color: $white
+        border-color: transparent
+        transform: translateY(-1rem)
+        box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.5)
+
+// cards for sections
+.cards
+    display: flex
+    flex-direction: column
+
+    &__block
+        +flex-wrap
+        justify-content: space-around
+
+        @media screen and ( max-width: 1200px )
+            align-items: center
+        
+        &:not(:last-child)
+            margin-bottom: 5rem
+
+            @media screen and ( max-width: 1200px )
+                margin-bottom: 0
+
+    &__item
+        +flex-wrap
+        flex-direction: column
+        padding-bottom: 3rem 
+        max-width: 36.3rem
+        background: $white
+        box-shadow: 0 1px 3px rgba(27, 23, 26, 0.2)
+        transition: 0.3s
+
+        @media screen and ( max-width: 1200px )
+            margin: 3rem 3rem
+            border: .5rem solid $burgundy
+
+        @media screen and ( max-width: 472px )
+                margin: 3rem 0
+
+        &:not(:last-child)
+            margin-right: 4.4rem
+
+            @media screen and ( max-width: 472px )
+                margin: 3rem 0
+
+        &:hover
+            box-shadow: 0 5px 21px 4px rgba(214, 222, 228, 0.68)
+
+            @media screen and ( max-width: 1200px )
+                border-color: darken($burgundy, 20%)
+    
+    &__img-block
+        display: block
+        position: relative
+    
+    &__img
+        display: block
+
+    .layer
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transition: .2s
+
+        &:hover
+            background-color: rgba(171, 5, 52, 0.6)
+
+            .layer__img
+                display: block
+        
+    .layer__img
+        display: none
+        position: absolute
+        top: calc(50% - #{$layer__img-height / 2})
+        left: calc(50% - #{$layer__img-width / 2})
+    
+    &__item-content
+        display: flex
+        flex-direction: column
+        flex-grow: 1    
+        padding: 0 2.8rem
+
+    &__text
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        margin-top: 2.9rem
+        max-width: 28.7rem
+        line-height: 2.4rem
+
+    &__text-title
+        word-break: break-word
+        font-size: 1.8rem
+        font-weight: 900
+        color: $top-courses__title--color
+        letter-spacing: 0.72px
+
+    &__text-subtitle
+        word-break: break-word
+        font-size: 1.4rem
+        color: $top-courses__subtitle--color
+        letter-spacing: 0.56px
+        margin: 3.4rem 0 2.4rem 0
+
+    &__price
+        font-size: 2.3rem
+        font-weight: 700
+        color: $burgundy
+        letter-spacing: 0.92px
+
+    &__rate    
+        width: 100% !important     
+        margin-top: 1.3rem
+        font-size: 1.3rem
+        color: $stars__color-gold
+
+    &__rate--burgundy 
+        color: $burgundy
+
+
+            
+
+
+
+// Header section
+.header
+    +flex-wrap
+    font-family: Open Sans
+    position: relative
+    align-items: center
+    background-color: $burgundy
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.17)
+    padding: 3rem 0
+
+    @media screen and ( max-width: 1622px )
+        +flex-wrap
+        justify-content: center
+        flex-direction: column
+
+    &__logo
+        user-select: none
+        color: $white
+        font-size: 4.8rem
+        font-weight: 300
+        margin-left: 37.6rem
+
+        @media screen and ( max-width: 1622px )
+            +block-center
+        
+        &:hover
+            span
+                color: #8819ff
+
+        span
+            transition: .5s
+            font-size: 4.8rem
+            font-weight: 900
+
+    .nav
+        +flex-wrap
+        margin: 0 25.2rem 0 10rem
+
+        @media screen and ( max-width: 1622px )
+            +block-center
+            padding: 3rem 0
+
+        @media screen and ( max-width: 544px )
+            display: flex
+            align-items: center
+            flex-direction: column
+            padding: 1rem 0
+
+        &__link
+            color: $white
+            font-size: 1.6rem
+            text-decoration: none
+            transition: 0.3s 
+
+            @media screen and ( max-width: 544px )
+                margin: 1.5rem 0          
+
+            &:not(:last-child)
+                margin-right: 5rem
+
+                @media screen and ( max-width: 544px )
+                    margin: 1.5rem 0
+            
+
+            &:hover
+                color: gold
+            
+    &__functions
+        +flex-wrap
+        align-items: center
+        font-size: 1.8rem
+        color: $white
+
+        @media screen and ( max-width: 540px )
+                flex-direction: column
+                align-items: center
+
+    &__functions-wrapper
+        @media screen and ( max-width: 540px )
+            display: flex
+            justify-content: space-around
+            width: 100%
+            margin-bottom: 2rem
+            
+    &__search, &__cart, &__sign-up,&__sign-in
+        color: $white
+        text-decoration: none
+        transition: 0.3s
+        
+        &:hover
+                color: gold
+
+    &__cart
+        margin: 0 4rem 0 5rem
+
+        @media screen and ( max-width: 544px )
+            margin: 0
+
+    &__input
+        +flex-wrap
+        align-items: center
+
+        &--divider
+            margin: 0 1rem 0 1rem
+
+    &__sign-in:not(&__sign-in::before), &__sign-up:not(&__sign-up::before)
+        color: $white
+        font-size: 1.6rem
+
+    &__sign-up::before, &__sign-in::before
+        margin-right: 1rem
+
+// Main section
+.main
+    +flex-wrap
+    font-family: Open Sans
+    background-color: $burgundy
+    color: $white
+    text-align: center
+
+    // &__wrapper
+    //     padding: 0 1rem
+
+    &__title
+        font-size: 6rem
+        font-weight: 700
+        margin-top: 9rem
+
+    &__subtitle
+        font-size: 24px
+        color: #f4f8ff
+        margin: 3.6rem 0 4.5rem 0
+
+    &__btn
+        font-family: Open Sans
+        +block-center
+        +btn-none
+        padding: 2.5rem 6.1rem
+        margin-bottom: 6.3rem
+        background-color: $burgundy
+        color: $white
+        letter-spacing: 0.16rem
+        border-radius: 4rem
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
+        text-transform: uppercase
+        font-size: 1.6rem
+        font-weight: 600
+        transition: 0.4s
+
+        &:hover
+            background-color: darken($burgundy, 3%)
+            box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2)
+            transform: translateY(-0.5rem)
+
+    &__img
+        +block-center
+        bottom: 0
+
+// Categories section
+.categories 
+    background-color: #f4f8ff
+    text-align: center
+    padding-top: 8.7rem
+
+    // &__wrapper
+    //     padding: 0 1rem
+
+    &__title
+        font-family: Open Sans
+        font-size: 3.6rem
+        font-weight: 700
+
+        &::after
+            +underline(#020202, 16.5rem, 1.7rem auto 10.4rem auto)
+
+    .cards
+        padding-bottom: 9.6rem
+
+        &__row  
+            +flex-wrap
+            justify-content: center
+            &:not(:last-child)
+                margin-bottom: 1.4rem
+                @media screen and ( max-width: 1189px )
+                    margin: 0
+
+        &__col
+            +flex-wrap
+            align-items: center
+            flex-direction: column
+            width: 18rem
+            height: 16.9rem
+            position: relative
+            padding-top: 4.5rem
+            text-decoration: none
+            transition: .3s
+
+            
+
+            &:not(:last-child)
+                margin-right: 1.4rem
+
+                @media screen and ( max-width: 1189px )
+                    margin: 0
+
+            &:hover
+                background-color: $burgundy
+
+                .cards__col-line
+                    display: none
+
+                .cards__col-icon, .cards__col-text
+                    color: $white
+            
+
+        &__col-line
+            position: absolute
+            display: block
+            height: 1px
+            background-color: #a6a6a6
+            
+            
+        &__line-top
+            width: 15rem
+            top: 0
+            left: calc(#{18rem - 15rem} / 2)
+
+        &__line-bottom
+            width: 15rem
+            bottom: 0
+            left: calc(#{18rem - 15rem} / 2)
+
+        &__line-left
+            width: 14.2rem
+            top: calc(#{16.9rem - 14.2rem} / 2)
+            left: 0
+            transform: rotate(90deg)
+            transform-origin: top left
+
+        &__line-right
+            width: 14.2rem
+            top: calc(#{16.9rem - 14.2rem} / 2)
+            right: 0
+            transform: rotate(-90deg)
+            transform-origin: top right
+
+        &__col-icon
+            font-size: 3.6rem
+            color: $burgundy
+
+        &__col-text
+            font-size: 1.8rem
+            margin-top: 1.7rem
+            color: $categ__cards-text--color
+
+// Top courses section
+.top-courses
+
+// Popular section
+.popular
+    background-color: #f7f9fa
+    padding-bottom: 10rem
+
+    &__head
+        margin-top: 10rem
+
+    &__buttons
+        +flex-wrap
+        justify-content: space-between
+
+        @media screen and ( max-width: 1200px )
+            display: block
+
+    &__buttons-btn
+        +btn-none
+        +block-center
+        cursor: pointer
+        font-size: 2.4rem
+        font-weight: 700
+        letter-spacing: 0.96px
+        color: $white
+        border-radius: 0.5rem
+        background: url("/assets/popular/bg.webp") 0 0 no-repeat
+        background-size: cover
+        transition: 0.2s
+
+        &:not(:last-child)
+            @media screen and ( max-width: 1200px )
+                margin-bottom: 2.5rem
+        
+    &__buttons-btn--1
+        background-color: #c7166f
+        padding: 3.8rem 13rem
+
+        @media screen and ( max-width: 416px )
+            width: 100%
+            padding: 3.8rem 0
+            text-align: center
+
+        &:hover
+            opacity: 75%
+
+    &__buttons-btn--2
+        background-color: #6c16c7
+        padding: 3.8rem 13.8rem
+
+        @media screen and ( max-width: 416px )
+            width: 100%
+            padding: 3.8rem 0
+            text-align: center
+
+        &:hover
+            opacity: 75%
+
+    &__buttons-btn--3
+        background-color: #2516c7
+        padding: 3.8rem 6.7rem
+
+        @media screen and ( max-width: 416px )
+            width: 100%
+            padding: 3.8rem 0
+            text-align: center
+
+        &:hover
+            opacity: 75%
+
+// Advantages section
+.advantages 
+
+    @media screen and ( max-width: 1200px )
+        padding-bottom: 5rem
+
+    &__cards-block
+        +flex-wrap
+
+        @media screen and ( max-width: 1200px )
+            justify-content: center
+
+        &:not(:last-child)
+            margin-bottom: 1.9rem
+
+            @media screen and ( max-width: 1200px )
+                margin-bottom: 0
+
+    &__cards-item
+        text-align: center
+        word-break: break-word
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2)
+        padding: 6.8rem 6rem
+        transition: 0.2s
+
+        @media screen and ( max-width: 1200px )
+            background-color: darken($white, 5%)
+            margin-bottom: 2rem
+                  
+        &:not(:last-child)
+            margin-right: 2.1rem
+
+            @media screen and ( max-width: 1200px )
+                margin-right: 0
+                
+
+        &:hover
+            box-shadow: 0 5px 21px 4px rgba(214, 222, 228, 0.68)
+            
+            .advantages__cards-img
+                transform: scale(1.05)
+
+    &__cards-img
+        transition: 0.2s
+
+    &__cards-title
+        flex-grow: 1
+        font-size: 1.8rem
+        font-weight: 700
+        margin: 3.3rem 0 2.5rem 0 
+        color: $black
+        
+    &__cards-subtitle
+        flex-grow: 1
+        max-width: 25.5rem
+        font-size: 1.4rem
+        color: #4c4c4c
+
+// Testimonicals section
+.testimonicals
+
+    &__wrapper
+        overflow: hidden
+        
+        @media screen and (max-width: 1240px) 
+            padding: 0 2rem
+
+    &__head
+
+        @media screen and ( max-width: 1240px )
+            padding-bottom: 4rem
+    
+    &__head-title
+        font-size: 2.4rem
+
+    &__head-subtitle
+
+    &__content
+        +flex-wrap
+        border-bottom: 1px solid #e6e7e8
+
+        @media screen and ( max-width: 1240px )
+            justify-content: space-between
+            padding-bottom: 5rem
+        
+
+    .quote
+        border-right: 1px solid #e6e7e8
+        padding-right: 15.3rem
+        padding-bottom: 11.1rem
+
+        @media screen and ( max-width: 1240px )
+            +flex-wrap
+            border: none
+            width: 100%
+            justify-content: space-around
+            align-items: center
+
+        @media screen and ( max-width: 1240px )
+            align-items: center
+            flex-direction: column
+            padding-right: 0
+
+        &__wrap
+            position: relative
+
+        &__img
+            position: absolute
+            top: 0
+            left: 0
+        
+        &__text
+            font-size: 1.8rem
+            font-style: italic
+            padding: 3.9rem 0 0 3.4rem
+            color: #4d4d4d
+            max-width: 45rem
+            line-height: 3rem
+
+
+        &__author
+            +flex-wrap
+            align-items: center
+            padding-top: 5.6rem
+
+            @media screen and ( max-width: 1240px )
+                padding-top: 0
+
+            @media screen and ( max-width: 920px )
+                margin-top: 5rem
+
+        &__author-img
+            display: block
+            border-radius: 50%
+
+        &__author-text
+            +flex-wrap
+            flex-direction: column
+            margin-left: 1.5rem
+
+        &__author-name
+            font-size: 1.6rem
+            font-weight: 500
+            color: $black
+
+
+        &__author-profession
+            font-size: 1.3rem
+            color: $grey
+
+    &__video
+        display: flex
+        outline: none
+        align-self: flex-start
+        position: relative  
+        left: 6.3rem    
+        border: 0.5rem solid #edf1f2
+
+        @media screen and ( max-width: 1240px )
+            margin: 0 auto
+            left: 0
+
+        @media screen and ( max-width: 568px )
+            width: 100%
+            border: none
+
+        video
+            outline: none
+
+            @media screen and ( max-width: 568px )
+                width: 100%
+                height: 100%
+
+    &__video-start
+        font-size: 6.1rem
+        color: $white
+        position: absolute
+        top: calc((100% - #{$video__img-start--size}) / 2 - 2.4rem)
+        left: calc((100% - #{$video__img-start--size}) / 2)
+        transition: 0.2s
+
+        @media screen and ( max-width: 568px )
+            top: calc((100% - #{$video__img-start--size}) / 2)
+
+        &:hover
+            color: red
+
+    &__slider
+        padding: 10rem 0 8.5rem 0
+        text-align: center
+    
+    &__slider-title
+        font-size: 3rem
+        font-weight: 300
+        color: $black
+
+        @media screen and ( max-width: 925px )
+            line-height: 4rem
+
+    &__slider-content
+        +flex-wrap
+        position: relative
+        margin-top: 5.3rem
+
+        .swiper-wrapper
+            align-items: center
+
+    &__slider-btn--prev, &__slider-btn--next
+        position: absolute
+        top: calc((#{100%} - #{3.6rem}) / 2)
+        left: 0
+        z-index: 10
+        font-size: 3.6rem
+        color: #040404
+        opacity: 0.25
+        transition: 0.2s
+
+        &:hover
+            opacity: 0.5
+
+    &__slider-btn--next
+        left: calc(#{100%} - #{2.2rem})
+
+// Blog section
+.blog
+    padding-bottom: 10rem
+
+    &__slider
+        max-width: 121rem !important
+        overflow: hidden
+        margin-left: -2rem
+        padding: 2rem 2rem 0 2rem
+
+        @media screen and ( max-width: 1240px )
+            margin-left: 0
+            width: 100%
+
+    &__slider-pagination
+        margin-top: 5.7rem
+        text-align: center
+
+    &__slider-bullet
+        cursor: pointer
+        display: inline-block
+        width: 1.4rem
+        height: 1.4rem
+        border: 2px solid #999
+        border-radius: 50%
+        color: #999
+
+        &:not(:last-child)
+            margin-right: 1rem
+
+    &__slider-bullet--active
+        background-color: #4d4d4d
+        border-color: #4d4d4d        
+
+    .swiper-slide
+        display: flex
+        justify-content: center
+
+    .cards
+
+        .swiper-slide
+            height: auto
+
+        &__item
+            max-width: 100%
+            height: 100%
+            cursor: grab
+            border: none
+            background: $white
+            
+
+            &:active
+                cursor: grabbing
+
+        &__item-img
+
+            img
+                display: block
+
+        &__item-content
+            padding-top: 3rem
+
+        &__datas
+            +flex-wrap
+
+        &__datas-wrap
+            +flex-wrap
+            align-items: center
+
+            &:not(:last-child)
+                margin-right: 8rem
+
+        &__datas-icon
+            font-size: 1.6rem
+            color: $grey
+            margin-right: 1rem
+
+        &__datas-text
+            font-size: 1.4rem
+            color: $grey
+
+        &__functions
+            +flex-wrap
+
+            @media screen and ( max-width: 420px )
+                flex-direction: column
+
+        &__read-more
+            display: flex
+            a
+                +flex-wrap
+                text-decoration: none
+                color: $burgundy
+                font-size: 1.6rem
+                font-weight: 700
+                transition: 0.2s
+
+                &:hover
+                    color: #000
+            
+            &--text
+                margin-right: 1rem
+
+        &__functions-contnent
+            +flex-wrap
+            align-items: center
+            margin-left: 7rem
+
+            @media screen and ( max-width: 420px )
+                margin-left: 0
+                margin-top: 1rem
+
+        &__functions-like, &__functions-comment
+            +flex-wrap
+            font-size: 1.4rem
+            font-weight: 500
+            color: $grey
+
+        &__functions-like
+            margin-right: 2.4rem
+
+            &--icon
+                transition: color 0.2s, transform 0.1s
+                
+                &:hover
+                    color: #d80000
+                    transform: scale(1.5)
+
+                &:active
+                    color: $burgundy
+                    transform: scale(1.7)
+        
+        &__functions-comment
+            &--icon
+                transition: color 0.2s, transform 0.1s
+
+                &:hover
+                    color: #d80000
+                    transform: scale(1.5)
+
+                &:active
+                    color: $burgundy
+                    transform: scale(1.7)
+
+        &__functions-value--like, &__functions-value--comment
+            margin-left: .5rem
+            
+// Instructor section
+.instructor 
+    background: url('/assets/instructor/bg.webp') 0 0 no-repeat
+    padding: 8.6rem 0 10rem 0
+    text-align: center
+    align-items: center
+
+    @media screen and ( max-width: 792px )
+        padding-top: 3rem
+
+    &__title
+        font-size: 3.6rem
+        font-weight: 500
+        color: #333333;
+        line-height: 2.4rem
+        margin-bottom: 5.8rem
+        letter-spacing: 0.36rem
+
+        @media screen and ( max-width: 792px )
+            line-height: 5rem 
+
+        @media screen and ( max-width: 420px )
+            margin-bottom: 2rem 
+            
+
+    &__form-text
+        border: none
+        outline: none
+        padding: 2.7rem 46.2rem 2.7rem 6.5rem
+        border-radius: 4rem
+        font-size: 1.6rem
+        color: $black
+        line-height: 2.3rem
+        letter-spacing: 0.08rem
+        
+        @media screen and ( max-width: 792px )
+            padding: 2.7rem 10rem
+            text-align: center
+
+        @media screen and ( max-width: 420px )
+            width: 100%
+            padding: 2rem 0
+
+        &::placeholder
+            font-size: 1.6rem
+            color: $black
+            line-height: 2.3rem
+            letter-spacing: 0.08rem
+            text-align: center
+
+            
+
+    &__form-submit
+        +btn-none
+        padding: 2.63rem 7.9rem
+        margin-left: -20rem
+        background: $burgundy
+        border-radius: 4rem
+        font-size: 1.6rem
+        font-weight: 500
+        line-height: 2.4rem
+        text-transform: uppercase
+        letter-spacing: 0.16rem
+        color: $white
+        transition: 0.2s
+        
+        @media screen and ( max-width: 792px )
+            display: block
+            margin: 2.3rem auto !important
+
+        @media screen and ( max-width: 420px )
+            padding: 2rem 10rem
+
+        &:hover
+            opacity: 0.7
+
+// Footer section
+.footer
+    padding: 10rem 0
+    background: $footer-color
+
+    @media screen and ( max-width: 864px )
+        padding-bottom: 4rem
+        padding-top: 3rem
+
+    @media screen and ( max-width: 584px )
+        padding-top: 3rem
+        
+    &__content
+        +flex-wrap
+        margin-bottom: 3.3rem
+        padding-bottom: 5.7rem
+        border-bottom: 1px solid #49477a
+        
+        @media screen and ( max-width: 1240px )
+            flex-direction: column
+
+    
+    &__contacts 
+        margin-right: 20rem
+        max-width: 21rem
+
+        @media screen and ( max-width: 1240px )
+            display: flex
+            margin-right: 0
+            max-width: 100%
+            justify-content: space-between
+
+        @media screen and ( max-width: 750px )
+            flex-direction: column
+            align-items: center
+            text-align: center
+            padding-bottom: 0
+
+    &__contacts-item
+        font-family: Open Sans
+        font-size: 1.4rem
+        color: $white
+
+        @media screen and ( max-width: 750px )
+            width: 100%
+            padding-bottom: 3rem
+            border-bottom: 1px solid #49477a
+
+        &:not(:last-child)
+            margin-bottom: 1rem
+
+            @media screen and ( max-width: 750px )
+                width: 100%
+                margin-bottom: 3rem
+                padding-bottom: 3rem
+                border-bottom: 1px solid #49477a
+
+        &:first-child
+            line-height: 3rem
+            margin-bottom: 5rem
+
+            @media screen and ( max-width: 750px )
+                margin-bottom: 3rem
+
+        span
+            font-family: Roboto
+            font-size: 1.6rem
+            font-weight: 700
+            line-height: 26px
+
+            @media screen and ( max-width: 864px )
+                display: block
+
+        a
+            font-size: 1.4rem
+            color: $white
+            text-decoration: none
+            transition: 0.2s
+
+            &:hover
+                color: $burgundy
+
+        .address
+            display: block
+
+        .tel
+            font-family: Roboto
+            font-weight: 400
+            font-size: 1.8rem
+
+    &__links
+        +flex-wrap
+
+        @media screen and ( max-width: 1240px )
+            justify-content: space-between
+
+        @media screen and ( max-width: 802px )
+            align-items: center
+            text-align: center
+
+        @media screen and ( max-width: 584px )
+            width: 100%
+            display: block
+            margin: 0 auto
+
+    &__links-block
+        display: flex
+        flex-direction: column
+
+        @media screen and ( max-width: 584px )
+                margin-top: 3rem
+                
+        &:not(:last-child)
+            margin-right: 13rem
+
+            @media screen and ( max-width: 802px )
+                margin: 0
+
+            @media screen and ( max-width: 584px )
+                margin-top: 3rem
+                padding-bottom: 3rem    
+                border-bottom: 1px solid #49477a
+
+    &__links-title
+        font-family: Open Sans
+        font-size: 1.6rem
+        font-weight: 700
+        color: $white
+
+    &__links-item
+        text-decoration: none
+        margin-top: 2rem
+        font-size: 1.4rem
+        color: $white
+        transition: 0.2s
+
+        &:hover
+            color: $burgundy
+            
+    &__copyright
+        +flex-wrap
+        justify-content: space-between
+        font-size: 1.6rem
+        color: $white
+
+        @media screen and ( max-width: 864px )
+            flex-direction: column
+            text-align: center
+
+    &__copyright-web
+        @media screen and ( max-width: 864px )
+            margin-bottom: 2rem
